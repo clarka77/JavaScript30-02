@@ -1,0 +1,84 @@
+<!doctype html>
+
+<html lang="en-US">
+
+<head>
+
+  <!-- Meta Elements -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- Always force latest IE rendering engine -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- shrink-to-fit addresses problem with iOS Safari-->
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="I'm a remote freelance Wordpress expert Developer God. Have a project in mind; contact me and let's discuss it.">
+  <!-- 115 characters long -->
+  <meta name="keywords" content="Clark Alford,ClarkA,Clark A,remote developer,web developer,freelance developer,wordpress developer,wordpress expert,wordpress god,remote freelance wordpress developer">
+  <!-- your,keywords,here,comma,separated,no,spaces.  Good for search other than google -->
+  <meta name="robots" content="index, follow">
+  <meta name="abstract" content="I help designers, individuals, and small businesses bring their designs or ideas to digital life on the world wide web so they can increase customer engagement, generate repeat website traffic, and improve brand presence.">
+  <!-- a very short description of your website; just need on index page -->
+  <meta name="copyright" content="Clark Alford">
+  <!-- name of owner -->
+  <meta name="no-email-collection" content="https://www.projecthoneypot.org/law_of_harvesting.php">
+  <!-- legal warning not to harvest emails from site -->
+  <meta name="rating" content="general">
+  <!-- general, mature, restricted, 14 years, safe for kids -->
+
+  <!-- Bing Geo Meta Tags -->
+  <meta name="geo.placename" content="Kansas City, KS, USA" />
+  <meta name="geo.position" content="39.114053;-94.627464" />
+  <meta name="geo.region" content="US-KS" />
+  <meta name="ICBM" content="39.114053, -94.627464" />
+
+  <!-- humans.txt we are people, not machines -->
+
+  <title>JavaScript30 | Project 02</title>
+
+  <!-- Favicons -->
+
+  <!-- CSS -->
+  <link rel='stylesheet' href='default.css' />
+
+  <!-- JS -->
+
+</head>
+<body>
+
+  <h1 class="text">Time Waits For No Man</h1>
+  <div class="clock">
+    <div class="clock-face">
+      <div class="hand hour-hand"></div>
+      <div class="hand min-hand"></div>
+      <div class="hand second-hand"></div>
+    </div>
+  </div>
+
+<script>
+  const secondHand = document.querySelector('.second-hand');
+  const minsHand = document.querySelector('.min-hand');
+  const hourHand = document.querySelector('.hour-hand');
+
+  function setDate() {
+    const now = new Date();
+
+    const seconds = now.getSeconds();
+    const secondsDegrees = ((seconds / 60) * 360) + 90;
+    secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+    const mins = now.getMinutes();
+    const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
+    minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+    const hour = now.getHours();
+    const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
+    hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+  }
+
+  setInterval(setDate, 1000);
+
+  setDate();
+
+</script>
+</body>
+</html>
